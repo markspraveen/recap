@@ -44,7 +44,7 @@ class SlideStories {
     this.items[this.active].children[1].classList.add('animate__animated');
     this.items[this.active].children[1].classList.add('animate__fadeInLeft');
     if (this.active == this.items.length - 1) this.timeout = setTimeout(this.next, 15000);
-    else this.timeout = setTimeout(this.next, 8000);
+    else this.timeout = setTimeout(this.next, 80000);
   }
   init() {
     this.next = this.next.bind(this);

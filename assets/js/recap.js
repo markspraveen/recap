@@ -173,7 +173,7 @@ function getFooterElement() {
         <img src="assets/img/ic_google_play.svg" alt="Logo" class="brand">
       </a>
 
-        <a href="#!" class="">
+        <a href="https://web.getmarks.app" class="">
           <img src="assets/img/ic_globe.svg" alt="Logo" class="brand" />
           web.getmarks.app
         </a>
@@ -259,14 +259,16 @@ function downloadSlide() {
 
   downloadSlide.innerHTML = getLayout(`
     <main class="center-slide-main">
-      <p class="subtitle-text">This year Marks crossed</p>
-      <div class="diff-text">
-        <h1 class="download-count-text text-stroke">500K+</h1>
-        <h1 class="download-count-text diff">500K+</h1>
-      </div>
-      <div class="diff-text">
-        <h1 class="downloads-text text-stroke">Downloads</h1>
-        <h1 class="downloads-text diff">Downloads</h1>
+      <p class="subtitle-text">This year MARKS crossed</p>
+      <div>
+        <div class="diff-text">
+          <h1 class="download-count-text text-stroke">500K+</h1>
+          <h1 class="download-count-text diff" style="color: rgba(105, 211, 245, 1);">500K+</h1>
+        </div>
+        <div class="diff-text">
+          <h1 class="downloads-text text-stroke">DOWNLOADS</h1>
+          <h1 class="downloads-text diff" style="color: rgba(105, 211, 245, 1);">Downloads</h1>
+        </div>
       </div>
     </main>
     ${getShareElement()}
@@ -319,14 +321,14 @@ function userQuestionSolvedSlide() {
       <div class="stat-card">
         <div class="stat-card-header"></div>
         <div>
-          <h3 style="font-size: 44px; text-align: center; color: #000;">This year, you solved</h3>
+          <h3 style="font-size: 46px; text-align: center; color: #000; font-family: 'Gilroy'; line-height: 100%; font-weight: 800;">This year, you solved</h3>
           <div class="diff-text">
-            <h1 class="download-count-text" style="font-size: 165px; color: #000;">1125</h1>
-            <h1 class="download-count-text diff text-stroke" style="color: transparent; font-size: 165px; -webkit-text-stroke-width: 2px;">1125</h1>
+            <h1 class="download-count-text" style="font-size: 125px; color: #000; font-family: 'Gilroy'; line-height: 100%; font-weight: 800;">1125</h1>
+            <h1 class="download-count-text diff text-stroke" style="color: transparent; font-size: 125px; -webkit-text-stroke-width: 2px; font-family: 'Gilroy'; line-height: 100%; font-weight: 800;">1125</h1>
           </div>
-          <h3 style="font-size: 44px; text-align: center; color: #000;">questions.</h3>
+          <h3 style="font-size: 44px; text-align: center; color: #000;  font-family: 'Gilroy'; line-height: 100%; font-weight: 800;">questions.</h3>
           <div class="small-divider" ></div>
-          <h5 style="font-size: 22px; text-align: center; color: #000;">that’s put you in top 56% of our students</h5>
+          <h5 style="font-size: 22px; text-align: center; color: #000; font-family: 'Gilroy';">that’s put you in top 56% of our students</h5>
         </div>
       </div>
     </main>
@@ -380,14 +382,14 @@ function userChallengeSolvedSlide() {
       <div class="stat-card" style="background-color: #C869F5;">
         <div class="stat-card-header" style="background-color: rgba(200, 105, 245, .2);"></div>
         <div>
-          <h3 style="font-size: 44px; text-align: center; color: #000;">In 2023, you took</h3>
-          <div class="diff-text" style="left: 75%; top: -25px;transform: translate(-50%);">
-            <h1 class="download-count-text" style="font-size: 165px; color: #000;">56</h1>
-            <h1 class="download-count-text diff text-stroke" style="color: transparent; font-size: 165px; -webkit-text-stroke-width: 2px;">56</h1>
+          <h3 style="font-size: 44px; text-align: center; color: #000; font-family: 'Gilroy'; line-height: 100%; font-weight: 800;">In 2023, you took</h3>
+          <div class="diff-text" style="left: 75%; top: 0px;transform: translate(-50%);">
+            <h1 class="download-count-text" style="font-size: 125px; color: #000; font-family: 'Gilroy'; line-height: 100%; font-weight: 800;">56</h1>
+            <h1 class="download-count-text diff text-stroke" style="color: transparent; font-size: 125px; -webkit-text-stroke-width: 2px; font-family: 'Gilroy'; line-height: 100%; font-weight: 800;">56</h1>
           </div>
-          <h3 style="font-size: 44px; text-align: center; color: #000;">challenges.</h3>
+          <h3 style="font-size: 44px; text-align: center; color: #000; font-family: 'Gilroy'; line-height: 100%; font-weight: 800;">challenges.</h3>
           <div class="small-divider" ></div>
-          <h5 style="font-size: 25px; text-align: center; color: #000;">you’re among the top 43% of our students</h5>
+          <h5 style="font-size: 25px; text-align: center; color: #000; font-family: 'Gilroy'; line-height: 100%; font-weight: 800;">you’re among the top 43% of our students</h5>
         </div>
       </div>
     </main>
@@ -441,13 +443,13 @@ function userCustomTestSolvedSlide() {
       <div class="stat-card" style="background-color: #69F599;">
         <div class="stat-card-header" style="background-color: rgba(105, 245, 153, .2);"></div>
         <div>
-          <div class="diff-text" style="top: -25px; left: 8%;">
-            <h1 class="download-count-text" style="font-size: 165px; color: #000;">356</h1>
-            <h1 class="download-count-text diff text-stroke" style="color: transparent; font-size: 165px; -webkit-text-stroke-width: 2px;">356</h1>
+          <div class="diff-text" style="top: 0; left: 8%;">
+            <h1 class="download-count-text" style="font-size: 125px; color: #000; font-family: 'Gilroy'; line-height: 100%; font-weight: 800;">356</h1>
+            <h1 class="download-count-text diff text-stroke" style="color: transparent; font-size: 125px; -webkit-text-stroke-width: 2px; font-family: 'Gilroy'; line-height: 100%; font-weight: 800;">356</h1>
           </div>
-          <h3 style="font-size: 34px; text-align: center; color: #000; margin-top: -20px;">custom tests were attempted by you.</h3>
+          <h3 style="font-size: 34px; text-align: center; color: #000; margin-top: 0; font-family: 'Gilroy'; line-height: 100%; font-weight: 800;">custom tests were attempted by you.</h3>
           <div class="small-divider" style="margin-top: 50px;"></div>
-          <h5 style="font-size: 25px; text-align: center; color: #000;">kudos! you’re in top 12% club.</h5>
+          <h5 style="font-size: 25px; text-align: center; color: #000; font-family: 'Gilroy'; line-height: 100%; font-weight: 800;">kudos! you’re in top 12% club.</h5>
         </div>
       </div>
     </main>
@@ -501,11 +503,11 @@ function userGoalsSolvedSlide() {
       <div class="stat-card" style="background-color: #69D3F5;">
         <div class="stat-card-header" style="background-color: rgba(105, 211, 245, .2);"></div>
         <div>
-          <div class="diff-text" style="top: -25px; left: 8%;">
-            <h1 class="download-count-text" style="font-size: 165px; color: #000;">102</h1>
-            <h1 class="download-count-text diff text-stroke" style="color: transparent; font-size: 165px; -webkit-text-stroke-width: 2px;">102</h1>
+          <div class="diff-text" style="top: 0; left: 8%;">
+            <h1 class="download-count-text" style="font-size: 125px; color: #000; font-family: 'Gilroy'; line-height: 100%; font-weight: 800;">102</h1>
+            <h1 class="download-count-text diff text-stroke" style="color: transparent; font-size: 125px; -webkit-text-stroke-width: 2px; font-family: 'Gilroy'; line-height: 100%; font-weight: 800;">102</h1>
           </div>
-          <h3 style="font-size: 34px; text-align: center; color: #000; margin-top: -20px; max-width: 70%; margin-inline: auto;">daily goals completed by you.</h3>
+          <h3 style="font-size: 34px; text-align: center; color: #000; margin-top: 0; max-width: 70%; margin-inline: auto; font-family: 'Gilroy'; line-height: 100%; font-weight: 800;">daily goals completed by you.</h3>
           <div class="small-divider" style="margin-top: 50px;"></div>
           <h5 style="font-size: 25px; text-align: center; color: #000;">kudos! you’re in top 12% club.</h5>
         </div>
