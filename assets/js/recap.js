@@ -169,7 +169,9 @@ function getFooterElement() {
   return `
     <footer class="screen-footer">
       <div class="footer-container">
+      <a href="https://play.google.com/store/apps/details?id=com.scoremarks.marks&hl=en&gl=US">
         <img src="assets/img/ic_google_play.svg" alt="Logo" class="brand">
+      </a>
 
         <a href="#!" class="">
           <img src="assets/img/ic_globe.svg" alt="Logo" class="brand" />
