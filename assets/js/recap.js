@@ -192,7 +192,7 @@ function addStartSlide() {
 function addSlidesV2 () {
   // downloadSlide();
   // questionsSolvedSlide();
-  userQuestionSolvedSlide();
+  // userQuestionSolvedSlide();
   challengesSolvedSlide();
   userChallengeSolvedSlide();
   customTestSolvedSlide();
@@ -284,18 +284,9 @@ function challengesSolvedSlide() {
   downloadSlide.innerHTML = getLayout(`
     <main class="center-slide-main">
       <div>
-        <div class="diff-text">
-          <h1 class="download-count-text text-stroke" style="font-size: 92px;">6&nbsp;LAKH+</h1>
-          <h1 class="download-count-text diff" style="color: #C869F5; font-size: 92px;">6&nbsp;LAKH+</h1>
-        </div>
-        <div class="diff-text">
-          <h1 class="download-count-text text-stroke" style="font-size: 65px;">CHALLENGES</h1>
-          <h1 class="download-count-text diff" style="color: #C869F5; font-size: 65px;">CHALLENGES</h1>
-        </div>
-        <div class="diff-text">
-          <h1 class="download-count-text text-stroke" style="font-size: 70px;">COMPLETED</h1>
-          <h1 class="download-count-text diff" style="color: #C869F5; font-size: 70px;">COMPLETED</h1>
-        </div>
+        <h1 class="download-count-text text-stroke" style="font-size: 92px; text-shadow: 5px 5px #C869F5;">6&nbsp;LAKH+</h1>
+        <h1 class="download-count-text text-stroke" style="font-size: 65px; text-shadow: 5px 5px #C869F5;">CHALLENGES</h1>
+        <h1 class="download-count-text text-stroke" style="font-size: 70px; text-shadow: 5px 5px #C869F5;">COMPLETED</h1>
       </div>
     </main>
     ${getShareElement()}
