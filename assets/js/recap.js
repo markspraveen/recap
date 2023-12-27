@@ -115,7 +115,7 @@ function modifyUserData() {
   }
 }
 
-// addStartSlide();
+addStartSlide();
 addSlidesV2();
 
 function getFooterElement() {
@@ -190,10 +190,10 @@ function addStartSlide() {
 }
 
 function addSlidesV2 () {
-  // downloadSlide();
-  // questionsSolvedSlide();
-  // userQuestionSolvedSlide();
-  // challengesSolvedSlide();
+  downloadSlide();
+  questionsSolvedSlide();
+  userQuestionSolvedSlide();
+  challengesSolvedSlide();
   userChallengeSolvedSlide();
   customTestSolvedSlide();
   userCustomTestSolvedSlide();
@@ -235,7 +235,7 @@ function questionsSolvedSlide() {
   downloadSlide.innerHTML = getLayout(`
     <main class="center-slide-main">
       <div>
-        <h1 class="download-count-text text-stroke" style="font-size: 65px; text-shadow: 5px 5px #FBFF41;">4&nbsp;MILLION+</h1>
+        <h1 class="download-count-text text-stroke" style="font-size: 65px; text-shadow: 5px 5px #FBFF41;">16.1&nbsp;MILLION+</h1>
         <h1 class="download-count-text text-stroke" style="font-size: 75px; text-shadow: 5px 5px #FBFF41;">QUESTIONS</h1>
         <h1 class="download-count-text text-stroke" style="font-size: 108px; text-shadow: 5px 5px #FBFF41;">SOLVED</h1>
       </div>
@@ -288,7 +288,7 @@ function challengesSolvedSlide() {
   downloadSlide.innerHTML = getLayout(`
     <main class="center-slide-main">
       <div>
-        <h1 class="download-count-text text-stroke" style="font-size: 92px; text-shadow: 5px 5px #C869F5;">6&nbsp;LAKH+</h1>
+        <h1 class="download-count-text text-stroke" style="font-size: 92px; text-shadow: 5px 5px #C869F5;">8.46&nbsp;LAKH+</h1>
         <h1 class="download-count-text text-stroke" style="font-size: 65px; text-shadow: 5px 5px #C869F5;">CHALLENGES</h1>
         <h1 class="download-count-text text-stroke" style="font-size: 70px; text-shadow: 5px 5px #C869F5;">COMPLETED</h1>
       </div>
@@ -341,8 +341,8 @@ function customTestSolvedSlide() {
   downloadSlide.innerHTML = getLayout(`
     <main class="center-slide-main">
       <div>
-        <h1 class="download-count-text text-stroke" style="font-size: 200px; text-shadow: 5px 5px #69F599;">45K</h1>
-        <h1 class="download-count-text text-stroke" style="font-size: 60px; text-shadow: 5px 5px #69F599;">Custom&nbsp;test</h1>
+        <h1 class="download-count-text text-stroke" style="font-size: 200px; text-shadow: 5px 5px #69F599;">10.4L</h1>
+        <h1 class="download-count-text text-stroke" style="font-size: 60px; text-shadow: 5px 5px #69F599;">Custom&nbsp;tests</h1>
         <h1 class="download-count-text text-stroke" style="font-size: 70px; text-shadow: 5px 5px #69F599;">Attempted</h1>
       </div>
     </main>
@@ -393,7 +393,7 @@ function goalsCompletedSlide() {
   downloadSlide.innerHTML = getLayout(`
     <main class="center-slide-main">
       <div>
-        <h1 class="download-count-text text-stroke" style="font-size: 70px; text-shadow: 5px 5px #69D3F5;">4&nbsp;MILLION+</h1>
+        <h1 class="download-count-text text-stroke" style="font-size: 70px; text-shadow: 5px 5px #69D3F5;">7.54&nbsp;MILLION+</h1>
         <h1 class="download-count-text text-stroke" style="font-size: 65px; text-shadow: 5px 5px #69D3F5;">DAILY&nbsp;GOALS</h1>
         <h1 class="download-count-text text-stroke" style="font-size: 70px; text-shadow: 5px 5px #69D3F5;">Completed</h1>
       </div>
