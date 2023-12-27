@@ -115,7 +115,7 @@ function modifyUserData() {
   }
 }
 
-addStartSlide();
+// addStartSlide();
 addSlidesV2();
 
 function getFooterElement() {
@@ -152,9 +152,9 @@ function getLayout (element) {
       <a class="text-white fs-18 fw-700" href="#">
         <img src="assets/img/brand-mark.svg" alt="Logo" class="brand">
       </a>
-      <p>
+      <p class="header-text">
         <img src="assets/img/recap.svg" alt="Logo" class="brand">
-        Marks Recap 2023
+        MARKS Recap 2023
       </p>
       <a href="#!" class="close-button">
         <img src="assets/img/ic_times.svg" alt="Close Icon">
@@ -214,14 +214,8 @@ function downloadSlide() {
     <main class="center-slide-main">
       <p class="subtitle-text">This year MARKS crossed</p>
       <div>
-        <div class="diff-text">
-          <h1 class="download-count-text text-stroke">500K+</h1>
-          <h1 class="download-count-text diff" style="color: rgba(105, 211, 245, 1);">500K+</h1>
-        </div>
-        <div class="diff-text">
-          <h1 class="downloads-text text-stroke">DOWNLOADS</h1>
-          <h1 class="downloads-text diff" style="color: rgba(105, 211, 245, 1);">Downloads</h1>
-        </div>
+        <h1 class="download-count-text text-stroke text-center" style="text-shadow: 5px 5px #69D3F5;">500K+</h1>
+        <h1 class="downloads-text text-stroke text-center" style="text-shadow: 5px 5px #69D3F5;">DOWNLOADS</h1>
       </div>
     </main>
     ${getShareElement()}

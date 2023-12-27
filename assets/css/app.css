@@ -41,6 +41,20 @@ body {
   align-items: center;
   flex-direction: column;
   height: calc(100vh - 185px);
+  z-index: 2;
+}
+
+.header-text {
+  font-family: 'Gilroy', sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 }
 
 .icon-container {
@@ -123,6 +137,7 @@ body {
   font-weight: 600;
   line-height: normal;
   margin-bottom: 0;
+  font-family: 'Gilroy', sans-serif;
 }
 
 .downloads-text {
@@ -206,7 +221,8 @@ body {
   font-family: 'Gilroy', sans-serif;
 
   padding-inline: 20px;
-  margin-top: 30vh;;
+  margin-top: 30vh;
+  ;
 }
 
 .start-marks-bg {
@@ -306,6 +322,9 @@ img {
   padding: 20px;
   padding-top: 40px;
   font-size: 18px;
+  font-family: 'Gilroy', sans-serif;
+  font-weight: 700;
+  z-index: 2;
 }
 
 .brand {
