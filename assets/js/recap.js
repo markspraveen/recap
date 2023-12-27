@@ -9,8 +9,8 @@ let playSlideshow = document.getElementById("playSlideshow");
 
 // get token and year from url
 const urlParams = new URLSearchParams(window.location.search);
-const TOKEN = urlParams.get("token") || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzYzZhOTU4NTBhOGEwMmRhMWNkN2YxYiIsImlhdCI6MTcwMzIzNTIxOCwiZXhwIjoxNzA1ODI3MjE4fQ.8JgeF6BXTprNS9IBa7yW1LtN3E13fCuBo9LiYMLy4A8';
-const YEAR = "2022" // urlParams.get("year");
+const TOKEN = urlParams.get("token");
+const YEAR = "2023" // urlParams.get("year");
 
 const API_ENDPOINT = `https://production.getmarks.app/api/v1/recap?token=${TOKEN}&year=${YEAR}`;
 let yearData = {};
@@ -18,7 +18,7 @@ fetch(API_ENDPOINT)
   .then((res) => res.json())
   .then((data) => {
     yearData = data?.data;
-    modifyUserData();
+    // modifyUserData();
     // generateSlides();
     startSliding();
   })
@@ -115,9 +115,6 @@ function modifyUserData() {
   }
 }
 
-addStartSlide();
-addSlidesV2();
-
 function getFooterElement() {
   return `
     <footer class="screen-footer">
@@ -140,7 +137,7 @@ function getShareElement() {
     <div class="share">
       <div class="share-container">
         <img src="assets/img/ic_share.svg" alt="Share Icon" class="share-icon">
-        <p class="share-content" style="padding-right: 8px;">Share This</p>
+        <p class="share-content" style="padding-right: 8px;">Save This</p>
       </div>
     </div>
   `;
@@ -189,7 +186,24 @@ function addStartSlide() {
   slidesContainer.appendChild(startSlide);
 }
 
+function noDataSlide() {
+  const slidesContainer = document.getElementById("slide-items");
+  const startSlide = document.createElement("div");
+  startSlide.classList.add("wrapper");
+  startSlide.classList.add("bg-dark");
+  startSlide.innerHTML = getLayout(`
+    <main class="page-main" style="padding-top: 120px;">
+      <p class="pb-8 start-slide-text" style="text-align: center;">
+        Oopsy! We do not have any Recap Data for you for 2023.
+      </p>
+      <img src="assets/img/marks-bg.svg" alt="marks bg" class="start-marks-bg" />
+    </main>
+  `);
+  slidesContainer.appendChild(startSlide);
+}
+
 function addSlidesV2 () {
+  addStartSlide();
   downloadSlide();
   questionsSolvedSlide();
   userQuestionSolvedSlide();
@@ -235,7 +249,7 @@ function questionsSolvedSlide() {
   downloadSlide.innerHTML = getLayout(`
     <main class="center-slide-main">
       <div>
-        <h1 class="download-count-text text-stroke" style="font-size: 65px; text-shadow: 5px 5px #FBFF41;">16.1&nbsp;MILLION+</h1>
+        <h1 class="download-count-text text-stroke" style="font-size: 65px; text-shadow: 5px 5px #FBFF41;">16.1MILLION+</h1>
         <h1 class="download-count-text text-stroke" style="font-size: 75px; text-shadow: 5px 5px #FBFF41;">QUESTIONS</h1>
         <h1 class="download-count-text text-stroke" style="font-size: 108px; text-shadow: 5px 5px #FBFF41;">SOLVED</h1>
       </div>
@@ -262,10 +276,10 @@ function userQuestionSolvedSlide() {
         <div class="stat-card-header"></div>
         <div>
           <h3 style="font-size: 46px; text-align: center; color: #000; font-family: 'Gilroy'; line-height: 100%; font-weight: 800;">This year, you solved</h3>
-          <h1 class="stat-number" style="text-shadow: 5px 5px #ececee">1125</h1>
+          <h1 class="stat-number" style="text-shadow: 5px 5px #ececee">${yearData?.result?.totalQuestionsAttempted?.count}</h1>
           <h3 style="font-size: 44px; text-align: center; color: #000;  font-family: 'Gilroy'; line-height: 100%; font-weight: 800;">questions.</h3>
           <div class="small-divider" ></div>
-          <h5 style="font-size: 22px; text-align: center; color: #000; font-family: 'Gilroy';">that’s put you in top 56% of our students</h5>
+          <h5 style="font-size: 22px; text-align: center; color: #000; font-family: 'Gilroy';">that’s put you in top ${yearData?.result?.totalQuestionsAttempted?.percentage}% of our students</h5>
         </div>
         </div>
         </div>
@@ -288,7 +302,7 @@ function challengesSolvedSlide() {
   downloadSlide.innerHTML = getLayout(`
     <main class="center-slide-main">
       <div>
-        <h1 class="download-count-text text-stroke" style="font-size: 92px; text-shadow: 5px 5px #C869F5;">8.46&nbsp;LAKH+</h1>
+        <h1 class="download-count-text text-stroke" style="font-size: 92px; text-shadow: 5px 5px #C869F5;">8.46&nbsp;L+</h1>
         <h1 class="download-count-text text-stroke" style="font-size: 65px; text-shadow: 5px 5px #C869F5;">CHALLENGES</h1>
         <h1 class="download-count-text text-stroke" style="font-size: 70px; text-shadow: 5px 5px #C869F5;">COMPLETED</h1>
       </div>
@@ -315,10 +329,10 @@ function userChallengeSolvedSlide() {
         <div class="stat-card-header" style="background-color: rgba(200, 105, 245, .2);"></div>
         <div>
           <h3 style="font-size: 44px; text-align: center; color: #000; font-family: 'Gilroy'; line-height: 100%; font-weight: 800; ">In 2023, you took</h3>
-          <h1 class="stat-number" style="font-size: 125px; color: #000; font-family: 'Gilroy'; line-height: 100%; font-weight: 800; text-shadow: 5px 5px #ececee;">56</h1>
+          <h1 class="stat-number" style="font-size: 125px; color: #000; font-family: 'Gilroy'; line-height: 100%; font-weight: 800; text-shadow: 5px 5px #ececee;">${yearData?.result?.totalChallengesAttempted?.count}</h1>
           <h3 style="font-size: 44px; text-align: center; color: #000; font-family: 'Gilroy'; line-height: 100%; font-weight: 800;">challenges.</h3>
           <div class="small-divider" ></div>
-          <h5 style="font-size: 25px; text-align: center; color: #000; font-family: 'Gilroy'; line-height: 100%; font-weight: 800;">you’re among the top 43% of our students</h5>
+          <h5 style="font-size: 25px; text-align: center; color: #000; font-family: 'Gilroy'; line-height: 100%; font-weight: 800;">you’re among the top ${yearData?.result?.totalChallengesAttempted?.percentage}% of our students</h5>
         </div>
       </div>
         </div>
@@ -341,8 +355,8 @@ function customTestSolvedSlide() {
   downloadSlide.innerHTML = getLayout(`
     <main class="center-slide-main">
       <div>
-        <h1 class="download-count-text text-stroke" style="font-size: 200px; text-shadow: 5px 5px #69F599;">10.4L</h1>
-        <h1 class="download-count-text text-stroke" style="font-size: 60px; text-shadow: 5px 5px #69F599;">Custom&nbsp;tests</h1>
+        <h1 class="download-count-text text-stroke" style="font-size: 125px; text-shadow: 5px 5px #69F599;">10.4L</h1>
+        <h1 class="download-count-text text-stroke" style="font-size: 50px; text-shadow: 5px 5px #69F599;">Custom&nbsp;tests</h1>
         <h1 class="download-count-text text-stroke" style="font-size: 70px; text-shadow: 5px 5px #69F599;">Attempted</h1>
       </div>
     </main>
@@ -367,10 +381,10 @@ function userCustomTestSolvedSlide() {
       <div class="stat-card" style="background-color: #69F599;">
         <div class="stat-card-header" style="background-color: rgba(105, 245, 153, .2);"></div>
         <div>
-          <h1 class="download-count-text" style="font-size: 125px; color: #000; font-family: 'Gilroy'; line-height: 100%; font-weight: 800; text-shadow: 5px 5px #ececee;">356</h1>
+          <h1 class="download-count-text" style="font-size: 125px; color: #000; font-family: 'Gilroy'; line-height: 100%; font-weight: 800; text-shadow: 5px 5px #ececee;">${yearData?.result?.totalCustomTestsAttempted?.count}</h1>
           <h3 style="font-size: 34px; text-align: center; color: #000; margin-top: 0; font-family: 'Gilroy'; line-height: 100%; font-weight: 800;">custom tests were attempted by you.</h3>
           <div class="small-divider" style="margin-top: 50px;"></div>
-          <h5 style="font-size: 25px; text-align: center; color: #000; font-family: 'Gilroy'; line-height: 100%; font-weight: 800;">kudos! you’re in top 12% club.</h5>
+          <h5 style="font-size: 25px; text-align: center; color: #000; font-family: 'Gilroy'; line-height: 100%; font-weight: 800;">kudos! you’re in top ${yearData?.result?.totalCustomTestsAttempted?.percentage}% club.</h5>
         </div>
       </div>
         </div>
@@ -393,8 +407,8 @@ function goalsCompletedSlide() {
   downloadSlide.innerHTML = getLayout(`
     <main class="center-slide-main">
       <div>
-        <h1 class="download-count-text text-stroke" style="font-size: 70px; text-shadow: 5px 5px #69D3F5;">7.54&nbsp;MILLION+</h1>
-        <h1 class="download-count-text text-stroke" style="font-size: 65px; text-shadow: 5px 5px #69D3F5;">DAILY&nbsp;GOALS</h1>
+        <h1 class="download-count-text text-stroke" style="font-size: 90px; text-shadow: 5px 5px #69D3F5;">7.54&nbsp;M+</h1>
+        <h1 class="download-count-text text-stroke" style="font-size: 60px; text-shadow: 5px 5px #69D3F5;">DAILY&nbsp;GOALS</h1>
         <h1 class="download-count-text text-stroke" style="font-size: 70px; text-shadow: 5px 5px #69D3F5;">Completed</h1>
       </div>
     </main>
@@ -419,10 +433,10 @@ function userGoalsSolvedSlide() {
       <div class="stat-card" style="background-color: #69D3F5;">
         <div class="stat-card-header" style="background-color: rgba(105, 211, 245, .2);"></div>
         <div>
-          <h1 class="download-count-text" style="font-size: 125px; color: #000; font-family: 'Gilroy'; line-height: 100%; font-weight: 800; text-shadow: 5px 5px #ececee;">102</h1>
+          <h1 class="download-count-text" style="font-size: 125px; color: #000; font-family: 'Gilroy'; line-height: 100%; font-weight: 800; text-shadow: 5px 5px #ececee;">${yearData?.result?.totalGoalsCompleted?.count}</h1>
           <h3 style="font-size: 34px; text-align: center; color: #000; margin-top: 0; max-width: 70%; margin-inline: auto; font-family: 'Gilroy'; line-height: 100%; font-weight: 800;">daily goals completed by you.</h3>
           <div class="small-divider" style="margin-top: 50px;"></div>
-          <h5 style="font-size: 25px; text-align: center; color: #000;">kudos! you’re in top 12% club.</h5>
+          <h5 style="font-size: 25px; text-align: center; color: #000;">kudos! you’re in top ${yearData?.result?.totalGoalsCompleted?.percentage}% club.</h5>
         </div>
       </div>
         </div>
@@ -444,14 +458,14 @@ function userOverviewSlide() {
 
   downloadSlide.innerHTML = getLayout(`
     <main class="screen-footer">
-      <h1 class="text-center" style=" margin-top: -75px; margin-bottom: 40px;">John Doe’s 2023</h1>
+      <h1 class="text-center" style=" margin-top: -75px; margin-bottom: 40px;">${yearData?.user?.name}’s 2023</h1>
       <div class="center-content">
         <div class="stats-container">
           <div class="stat-card" style="background-color: rgba(251, 255, 65, 1);">
             <div class="icon-container">
               <img src="assets/img/ic_stat_question.svg" style="height:40px; width:40px;" />
               <div>
-                <h5>2.3L</h5>
+                <h5>${yearData?.result?.totalQuestionsAttempted?.count}</h5>
                 <p>question solved</p>
               </div>
             </div>
@@ -461,7 +475,7 @@ function userOverviewSlide() {
             <div class="icon-container">
               <img src="assets/img/ic_stat_challenge.svg" style="height:40px; width:40px;" />
               <div>
-                <h5>143</h5>
+                <h5>${yearData?.result?.totalChallengesAttempted?.count}</h5>
                 <p>challenges conquered</p>
               </div>
             </div>
@@ -471,7 +485,7 @@ function userOverviewSlide() {
             <div class="icon-container">
               <img src="assets/img/ic_stat_tests.svg" style="height:40px; width:40px;" />
               <div>
-                <h5>74</h5>
+                <h5>${yearData?.result?.totalCustomTestsAttempted?.count}</h5>
                 <p>custom tests attempted</p>
               </div>
             </div>
@@ -481,7 +495,7 @@ function userOverviewSlide() {
             <div class="icon-container">
               <img src="assets/img/ic_stat_goal.svg" style="height:40px; width:40px;" />
               <div>
-                <h5>102</h5>
+                <h5>${yearData?.result?.totalGoalsCompleted?.count}</h5>
                 <p>daily goals completed</p>
               </div>
             </div>
@@ -595,5 +609,10 @@ function addEndSlide() {
 }
 
 function startSliding() {
+  if (!yearData?.result || !TOKEN) {
+    noDataSlide();
+  } else {
+    addSlidesV2();
+  }
   new SlideStories("slide");
 }

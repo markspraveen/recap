@@ -96,7 +96,7 @@ body {
   flex-direction: column;
   gap: 20px;
 
-  min-width: 400px;
+  min-width: 360px;
   max-width: 450px;
   height: 70vh;
 }
@@ -253,7 +253,7 @@ body {
   font-family: 'Gilroy', sans-serif;
 
   padding-inline: 20px;
-  margin-top: 30vh;
+  margin-top: 20vh;
   ;
 }
 
