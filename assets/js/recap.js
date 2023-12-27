@@ -133,6 +133,7 @@ function getFooterElement() {
 }
 
 function getShareElement() {
+  return ``;
   return `
     <div class="share">
       <div class="share-container">
@@ -177,7 +178,7 @@ function addStartSlide() {
   startSlide.classList.add("bg-dark");
   startSlide.innerHTML = getLayout(`
     <main class="page-main" style="padding-top: 120px;">
-      <p class="pb-8 start-slide-text" style="text-align: center;">
+      <p class="start-slide-text" style="text-align: center;">
         Let’s see what we achieved together in year 2023
       </p>
       <img src="assets/img/marks-bg.svg" alt="marks bg" class="start-marks-bg" />
@@ -215,6 +216,11 @@ function addSlidesV2 () {
   userGoalsSolvedSlide();
   userOverviewSlide();
   happyEndSlide();
+}
+
+function getNonZeroData(template, value) {
+  if (value > 0) return template;
+  return "";
 }
 
 // 01
@@ -278,8 +284,7 @@ function userQuestionSolvedSlide() {
           <h3 style="font-size: 46px; text-align: center; color: #000; font-family: 'Gilroy'; line-height: 100%; font-weight: 800;">This year, you solved</h3>
           <h1 class="stat-number" style="text-shadow: 5px 5px #ececee">${yearData?.result?.totalQuestionsAttempted?.count}</h1>
           <h3 style="font-size: 44px; text-align: center; color: #000;  font-family: 'Gilroy'; line-height: 100%; font-weight: 800;">questions.</h3>
-          <div class="small-divider" ></div>
-          <h5 style="font-size: 22px; text-align: center; color: #000; font-family: 'Gilroy';">that’s put you in top ${yearData?.result?.totalQuestionsAttempted?.percentage}% of our students</h5>
+          ${yearData?.result?.totalQuestionsAttempted?.count > 0 ? `<div class="small-divider" ></div><h5 style="font-size: 22px; text-align: center; color: #000; font-family: 'Gilroy';">that’s put you in top ${yearData?.result?.totalQuestionsAttempted?.percentage}% of our students</h5>` : "" }
         </div>
         </div>
         </div>
@@ -331,8 +336,8 @@ function userChallengeSolvedSlide() {
           <h3 style="font-size: 44px; text-align: center; color: #000; font-family: 'Gilroy'; line-height: 100%; font-weight: 800; ">In 2023, you took</h3>
           <h1 class="stat-number" style="font-size: 125px; color: #000; font-family: 'Gilroy'; line-height: 100%; font-weight: 800; text-shadow: 5px 5px #ececee;">${yearData?.result?.totalChallengesAttempted?.count}</h1>
           <h3 style="font-size: 44px; text-align: center; color: #000; font-family: 'Gilroy'; line-height: 100%; font-weight: 800;">challenges.</h3>
-          <div class="small-divider" ></div>
-          <h5 style="font-size: 25px; text-align: center; color: #000; font-family: 'Gilroy'; line-height: 100%; font-weight: 800;">you’re among the top ${yearData?.result?.totalChallengesAttempted?.percentage}% of our students</h5>
+          
+          ${yearData?.result?.totalChallengesAttempted?.count > 0 ? `<div class="small-divider" ></div><h5 style="font-size: 25px; text-align: center; color: #000; font-family: 'Gilroy'; line-height: 100%; font-weight: 800;">you’re among the top ${yearData?.result?.totalChallengesAttempted?.percentage}% of our students</h5>`: ``}
         </div>
       </div>
         </div>
@@ -383,8 +388,8 @@ function userCustomTestSolvedSlide() {
         <div>
           <h1 class="download-count-text" style="font-size: 125px; color: #000; font-family: 'Gilroy'; line-height: 100%; font-weight: 800; text-shadow: 5px 5px #ececee;">${yearData?.result?.totalCustomTestsAttempted?.count}</h1>
           <h3 style="font-size: 34px; text-align: center; color: #000; margin-top: 0; font-family: 'Gilroy'; line-height: 100%; font-weight: 800;">custom tests were attempted by you.</h3>
-          <div class="small-divider" style="margin-top: 50px;"></div>
-          <h5 style="font-size: 25px; text-align: center; color: #000; font-family: 'Gilroy'; line-height: 100%; font-weight: 800;">kudos! you’re in top ${yearData?.result?.totalCustomTestsAttempted?.percentage}% club.</h5>
+          
+          ${yearData?.result?.totalCustomTestsAttempted?.count > 0 ? `<div class="small-divider" style="margin-top: 50px;"></div><h5 style="font-size: 25px; text-align: center; color: #000; font-family: 'Gilroy'; line-height: 100%; font-weight: 800;">kudos! you’re in top ${yearData?.result?.totalCustomTestsAttempted?.percentage}% club.</h5>`: ``}
         </div>
       </div>
         </div>
@@ -435,8 +440,7 @@ function userGoalsSolvedSlide() {
         <div>
           <h1 class="download-count-text" style="font-size: 125px; color: #000; font-family: 'Gilroy'; line-height: 100%; font-weight: 800; text-shadow: 5px 5px #ececee;">${yearData?.result?.totalGoalsCompleted?.count}</h1>
           <h3 style="font-size: 34px; text-align: center; color: #000; margin-top: 0; max-width: 70%; margin-inline: auto; font-family: 'Gilroy'; line-height: 100%; font-weight: 800;">daily goals completed by you.</h3>
-          <div class="small-divider" style="margin-top: 50px;"></div>
-          <h5 style="font-size: 25px; text-align: center; color: #000;">kudos! you’re in top ${yearData?.result?.totalGoalsCompleted?.percentage}% club.</h5>
+          ${yearData?.result?.totalGoalsCompleted?.count > 0 ? `<div class="small-divider" style="margin-top: 50px;"></div><h5 style="font-size: 25px; text-align: center; color: #000;">kudos! you’re in top ${yearData?.result?.totalGoalsCompleted?.percentage}% club.</h5>`: ``}
         </div>
       </div>
         </div>
@@ -519,16 +523,16 @@ function happyEndSlide() {
 
   downloadSlide.innerHTML = getLayout(`
     <main class="center-slide-main">
-    <p style="text-align: center; max-width: 90%; font-size: 28px; font-weight: 600;">May your MARKS increase more in 2024 with MARKS!</p>
+      <p style="text-align: center; max-width: 90%; font-size: 28px; font-weight: 600; margin-bottom: 40px; font-family: 'Gilroy'">
+        May your <span style="color: #69D3F5;">M</span><span style="color: #69F599;">A</span><span style="color: #C869F5;">R</span><span style="color: #FBFF40;">K</span><span style="color: #69D3F5;">S</span>
+        increase more in 2024 with MARKS!
+      </p>
       <div>
         <div class="diff-text">
           <h1 class="download-count-text text-stroke" style="font-size: 93px;">HAPPY</h1>
           <h1 class="download-count-text diff text-stroke" style="color: rgba(15, 23, 41, 1); font-size: 93px; -webkit-text-stroke-color: #fff;">HAPPY</h1>
         </div>
-        <div class="diff-text">
-          <h1 class="download-count-text text-stroke" style="font-size: 123px;">2024</h1>
-          <h1 class="download-count-text diff" style="color: #69D3F5; font-size: 123px;">2024</h1>
-        </div>
+        <h1 class="download-count-text text-center text-stroke" style="font-size: 123px; font-family: 'Barlow Condensed' ;"><span style="text-shadow: 5px 5px #69D3F5;">2</span><span style="text-shadow: 5px 5px #69F599;">0</span><span style="text-shadow: 5px 5px #C869F5;">2</span><span style="text-shadow: 5px 5px #FBFF40;">4</span></h1>
       </div>
     </main>
     ${getShareElement()}

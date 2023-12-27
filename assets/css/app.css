@@ -245,6 +245,10 @@ body {
   background: var(--nutral-900-light, #0F1729);
 }
 
+.colored-text {
+  display: flex;
+}
+
 .start-slide-text {
   color: #FFF;
   text-align: center;
@@ -253,8 +257,6 @@ body {
   font-family: 'Gilroy', sans-serif;
 
   padding-inline: 20px;
-  margin-top: 20vh;
-  ;
 }
 
 .start-marks-bg {
