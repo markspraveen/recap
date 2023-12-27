@@ -117,53 +117,6 @@ function modifyUserData() {
 
 addStartSlide();
 addSlidesV2();
-// generateSlides();
-function generateSlides() {
-  Object.keys(slidesObject).forEach((key) => {
-    addSlide(slidesObject[key]);
-  });
-  addEndSlide();
-}
-
-function addSlide({
-  color = "bg-orange",
-  icon = "assets/img/ic_question.svg",
-  titleTop = "You solved",
-  title = "",
-  titleBottom = "questions this year.",
-  subTitle = "",
-}) {
-  const slidesContainer = document.getElementById("slide-items");
-  const endSlide = document.createElement("div");
-  endSlide.classList.add("wrapper");
-  endSlide.classList.add(color);
-  endSlide.innerHTML = `
-        <header class="page-header">
-        <a class="text-white fs-18 fw-700" href="#">
-            <img src="assets/img/brand-mark.svg" alt="Logo" class="brand">
-            #2022Recap
-        </a>
-        <a href="#!" class="close-button">
-            <img src="assets/img/ic_times.svg" alt="Close Icon">
-        </a>
-        </header>
-        <main class="page-main">
-        <img src="${icon}" alt="Question Icon" class="mb-24">
-        <p class="text-white fw-500 fs-18 pb-8">${titleTop}</p>
-        <h2 class="text-white fw-900 fs-48 pb-8">${title}</h2>
-        <p class="text-white fw-500 fs-18 mb-32">${titleBottom}</p>
-        <p class="text-white fw-700 fs-24">${subTitle}</p>
-        </main>
-        <footer class="page-footer">
-        <p class="footer-link" style="text-align: center; display: block;">Take a screenshot and share with others!
-            https://getmarks.app</p>
-        <a href="#!" class="button" onclick="saveImage('slide-2')">
-            Save This
-        </a>
-        </footer>
-    `;
-  slidesContainer.appendChild(endSlide);
-}
 
 function getFooterElement() {
   return `
@@ -227,7 +180,7 @@ function addStartSlide() {
   startSlide.classList.add("bg-dark");
   startSlide.innerHTML = getLayout(`
     <main class="page-main" style="padding-top: 120px;">
-      <p class=" pb-8 start-slide-text" style="text-align: center;">
+      <p class="pb-8 start-slide-text" style="text-align: center;">
         Let’s see what we achieved together in year 2023
       </p>
       <img src="assets/img/marks-bg.svg" alt="marks bg" class="start-marks-bg" />
