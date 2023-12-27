@@ -193,7 +193,7 @@ function addSlidesV2 () {
   // downloadSlide();
   // questionsSolvedSlide();
   // userQuestionSolvedSlide();
-  challengesSolvedSlide();
+  // challengesSolvedSlide();
   userChallengeSolvedSlide();
   customTestSolvedSlide();
   userCustomTestSolvedSlide();
@@ -308,11 +308,8 @@ function userChallengeSolvedSlide() {
       <div class="stat-card" style="background-color: #C869F5;">
         <div class="stat-card-header" style="background-color: rgba(200, 105, 245, .2);"></div>
         <div>
-          <h3 style="font-size: 44px; text-align: center; color: #000; font-family: 'Gilroy'; line-height: 100%; font-weight: 800;">In 2023, you took</h3>
-          <div class="diff-text" style="left: 75%; top: 0px;transform: translate(-50%);">
-            <h1 class="download-count-text" style="font-size: 125px; color: #000; font-family: 'Gilroy'; line-height: 100%; font-weight: 800;">56</h1>
-            <h1 class="download-count-text diff text-stroke" style="color: transparent; font-size: 125px; -webkit-text-stroke-width: 2px; font-family: 'Gilroy'; line-height: 100%; font-weight: 800;">56</h1>
-          </div>
+          <h3 style="font-size: 44px; text-align: center; color: #000; font-family: 'Gilroy'; line-height: 100%; font-weight: 800; ">In 2023, you took</h3>
+          <h1 class="stat-number" style="font-size: 125px; color: #000; font-family: 'Gilroy'; line-height: 100%; font-weight: 800; text-shadow: 5px 5px #ececee;">56</h1>
           <h3 style="font-size: 44px; text-align: center; color: #000; font-family: 'Gilroy'; line-height: 100%; font-weight: 800;">challenges.</h3>
           <div class="small-divider" ></div>
           <h5 style="font-size: 25px; text-align: center; color: #000; font-family: 'Gilroy'; line-height: 100%; font-weight: 800;">you’re among the top 43% of our students</h5>
