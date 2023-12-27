@@ -191,7 +191,7 @@ function addStartSlide() {
 
 function addSlidesV2 () {
   // downloadSlide();
-  questionsSolvedSlide();
+  // questionsSolvedSlide();
   userQuestionSolvedSlide();
   challengesSolvedSlide();
   userChallengeSolvedSlide();
@@ -260,10 +260,7 @@ function userQuestionSolvedSlide() {
         <div class="stat-card-header"></div>
         <div>
           <h3 style="font-size: 46px; text-align: center; color: #000; font-family: 'Gilroy'; line-height: 100%; font-weight: 800;">This year, you solved</h3>
-          <div class="diff-text">
-            <h1 class="download-count-text" style="font-size: 125px; color: #000; font-family: 'Gilroy'; line-height: 100%; font-weight: 800;">1125</h1>
-            <h1 class="download-count-text diff text-stroke" style="color: transparent; font-size: 125px; -webkit-text-stroke-width: 2px; font-family: 'Gilroy'; line-height: 100%; font-weight: 800;">1125</h1>
-          </div>
+          <h1 class="stat-number" style="text-shadow: 5px 5px #ececee">1125</h1>
           <h3 style="font-size: 44px; text-align: center; color: #000;  font-family: 'Gilroy'; line-height: 100%; font-weight: 800;">questions.</h3>
           <div class="small-divider" ></div>
           <h5 style="font-size: 22px; text-align: center; color: #000; font-family: 'Gilroy';">that’s put you in top 56% of our students</h5>
