@@ -41,7 +41,7 @@ body {
   align-items: center;
   flex-direction: column;
   height: calc(100vh - 185px);
-  z-index: 2;
+  z-index: 1;
 }
 
 .header-text {
@@ -127,6 +127,7 @@ body {
   line-height: normal;
   letter-spacing: 4.383px;
   text-transform: uppercase;
+  text-align: center;
 }
 
 .subtitle-text {

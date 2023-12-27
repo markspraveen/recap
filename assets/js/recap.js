@@ -190,7 +190,7 @@ function addStartSlide() {
 }
 
 function addSlidesV2 () {
-  downloadSlide();
+  // downloadSlide();
   questionsSolvedSlide();
   userQuestionSolvedSlide();
   challengesSolvedSlide();
@@ -214,8 +214,8 @@ function downloadSlide() {
     <main class="center-slide-main">
       <p class="subtitle-text">This year MARKS crossed</p>
       <div>
-        <h1 class="download-count-text text-stroke text-center" style="text-shadow: 5px 5px #69D3F5;">500K+</h1>
-        <h1 class="downloads-text text-stroke text-center" style="text-shadow: 5px 5px #69D3F5;">DOWNLOADS</h1>
+        <h1 class="download-count-text text-stroke" style="text-shadow: 5px 5px #69D3F5;">500K+</h1>
+        <h1 class="downloads-text text-stroke" style="text-shadow: 5px 5px #69D3F5;">DOWNLOADS</h1>
       </div>
     </main>
     ${getShareElement()}
@@ -235,18 +235,9 @@ function questionsSolvedSlide() {
   downloadSlide.innerHTML = getLayout(`
     <main class="center-slide-main">
       <div>
-        <div class="diff-text">
-          <h1 class="download-count-text text-stroke" style="font-size: 65px;">4&nbsp;MILLION+</h1>
-          <h1 class="download-count-text diff" style="color: #FBFF41; font-size: 65px;">4&nbsp;MILLION+</h1>
-        </div>
-        <div class="diff-text">
-          <h1 class="download-count-text text-stroke" style="font-size: 75px;">QUESTIONS</h1>
-          <h1 class="download-count-text diff" style="color: #FBFF41; font-size: 75px;">QUESTIONS</h1>
-        </div>
-        <div class="diff-text">
-          <h1 class="download-count-text text-stroke" style="font-size: 108px;">SOLVED</h1>
-          <h1 class="download-count-text diff" style="color: #FBFF41; font-size: 108px;">SOLVED</h1>
-        </div>
+        <h1 class="download-count-text text-stroke" style="font-size: 65px; text-shadow: 5px 5px #FBFF41;">4&nbsp;MILLION+</h1>
+        <h1 class="download-count-text text-stroke" style="font-size: 75px; text-shadow: 5px 5px #FBFF41;">QUESTIONS</h1>
+        <h1 class="download-count-text text-stroke" style="font-size: 108px; text-shadow: 5px 5px #FBFF41;">SOLVED</h1>
       </div>
     </main>
     ${getShareElement()}
