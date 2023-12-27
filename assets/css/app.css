@@ -66,7 +66,7 @@ body {
 .icon-container h5 {
   color: var(--nutral-900-light, #0F1729);
   font-family: Gilroy;
-  font-size: 24px;
+  font-size: 30px;
   font-style: normal;
   font-weight: 900;
   line-height: normal;
@@ -75,22 +75,42 @@ body {
 .icon-container p {
   color: var(--nutral-900-light, #0F1729);
   font-family: Gilroy;
-  font-size: 16px;
+  font-size: 18px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+}
+
+.center-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+
+}
+
+.stats-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+
+  min-width: 400px;
+  max-width: 450px;
+  height: 70vh;
 }
 
 .stat-card {
   position: relative;
   bottom: 0;
   width: 81%;
-  margin-inline: auto;
   background-color: rgba(251, 255, 65, 1);
   height: 100%;
   border-top-right-radius: 32px;
   border-top-left-radius: 32px;
   padding: 34px;
+  padding-top: 20px;
   z-index: -2;
 }
 
@@ -186,7 +206,6 @@ body {
   left: 0;
   width: 100%;
   z-index: 9999;
-
 }
 
 .footer-container {
